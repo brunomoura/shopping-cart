@@ -53,6 +53,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'common',
+    'product',
 )
 
 INSTALLED_APPS += THIRD_PARTY_APPS
