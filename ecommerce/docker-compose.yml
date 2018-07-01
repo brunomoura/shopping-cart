@@ -1,0 +1,36 @@
+version: '2'
+services:
+  shoppingcart-back:
+    tty: true
+    image: python:3.6
+    command:
+    - bash
+    - -c
+    - /var/www/docker-entrypoint.sh
+    environment:
+    - PYTHONIOENCODING=UTF-8
+    - LC_ALL=C.UTF-8
+    - LANG=C.UTF-8
+    - port=8000
+    ports:
+    - 8000:8000/tcp
+    volumes:
+    - .:/var/www/
+    external_links:
+    - dbecommerce
+    network_mode: bridge
+    depends_on:
+    - db
+
+  db:
+    container_name: dbecommerce
+    image: postgres:9.6
+    network_mode: bridge
+    environment:
+      - POSTGRES_USER=bruno
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=ecommerce
+    volumes:
+      - /home/brunomoura/db/:/var/lib/postgresql/data
+    ports:
+      - 5434:5432/tcp
