@@ -19,6 +19,7 @@ class ProductListSerializer(V1HyperLinkedModelSerializer):
             'pk',
             'name',
             'slug',
+            'price',
             'image',
         )
 
@@ -38,5 +39,7 @@ class ProductDetailSerializer(V1HyperLinkedModelSerializer):
             'name',
             'slug',
             'description',
+            'price',
             'image',
+            'stock',
         )

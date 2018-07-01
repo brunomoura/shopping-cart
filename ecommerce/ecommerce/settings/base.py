@@ -49,6 +49,7 @@ THIRD_PARTY_APPS = (
     'rest_framework.authtoken',
     'rest_framework_swagger',
     'django_js_reverse',
+    'corsheaders',
 )
 
 LOCAL_APPS = (
@@ -63,6 +64,7 @@ INSTALLED_APPS += LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -148,6 +150,8 @@ STATIC_ROOT = BASE_DIR.child('staticfiles')
 MEDIA_ROOT = BASE_DIR.child('media')
 MEDIA_URL = '/media/'
 
+# Cross-Origin Resource Sharing
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Celery
 CELERY_ACCEPT_CONTENT = ['json']
