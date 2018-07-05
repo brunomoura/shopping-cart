@@ -5,6 +5,12 @@ from django.utils.translation import ugettext_lazy as _
 from .category import Category
 
 
+class ProductCustomModelManager(models.Manager):
+
+    def availables(self):
+        return self.filter(available=True)
+
+
 class Product(models.Model):
     category = models.ForeignKey(
         Category,
@@ -43,6 +49,7 @@ class Product(models.Model):
         upload_to='products/%Y/%m/%d',
         blank=True
     )
+    objects = ProductCustomModelManager()
 
     class Meta:
         index_together = (('id', 'slug'),)

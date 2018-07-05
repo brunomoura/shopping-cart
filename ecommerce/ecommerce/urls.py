@@ -6,6 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from .site_urls import url_site_patterns
 from .v1_urls import url_api_patterns as v1_urls_api_patterns
 
 
@@ -18,9 +19,8 @@ urlpatterns = [
         admin.site.urls
     ),
     url(
-        r'^$',
-        TemplateView.as_view(template_name='base.html'),
-        name='home'
+        r'^ecommerce/',
+        include(url_site_patterns)
     ),
     url(
         r'^docs/$',
