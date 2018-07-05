@@ -1,1 +1,1 @@
-from .product import ProductListView
+from .product import ProductListView, ProductCreateView
