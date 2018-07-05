@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = (
     'rest_framework_swagger',
     'django_js_reverse',
     'corsheaders',
+    'django_nose',
 )
 
 LOCAL_APPS = (
@@ -154,3 +155,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--exclude-path=../*/admin',
+    '--exclude-path=../*/models',
+]

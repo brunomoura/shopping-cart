@@ -1,0 +1,19 @@
+<h1>Products</h1>
+
+{% if product_list %}
+
+    <ul>
+        {% for product in product_list %}
+            <li>
+                <p>Name: {{ product.name }}</p>
+                <p>Available: {{ product.available }}</p>
+            </li>
+            <br/>
+        {% endfor %}
+    </ul>
+
+{% else %}
+
+  <p>There are no products registred.</p>
+
+{% endif %}
