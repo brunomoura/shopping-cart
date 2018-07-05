@@ -21,9 +21,6 @@ from .django_rest_settings import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).absolute().ancestor(2)
 
-# insert path to apps
-path.insert(0, BASE_DIR.child('apps'))
-
 SITE_ID = 1
 
 ALLOWED_HOSTS = []
