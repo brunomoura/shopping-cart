@@ -8,7 +8,7 @@ coreschema==0.0.4
 dj-database-url==0.4.2
 Django==1.11.8
 django-cors-headers==2.3.0
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.11.1
 django-debug-toolbar-request-history==0.0.6
 django-extensions==1.9.8
 django-js-reverse==0.7.3
