@@ -1,7 +1,7 @@
 astroid==1.5.3
 attrs==17.3.0
 boltons==16.1.1
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 coreapi==2.3.3
 coreschema==0.0.4
